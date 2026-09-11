@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aetherial Guard | Profesyonel Metin2 Otomasyon ve Güvenlik Sistemi</title>
+    <title>Aetherial Guard | Next-Gen Automation System</title>
     <style>
         :root {
             --bg-color: #090a0f;
             --card-bg: #13151f;
-            --accent-color: #dc2626; /* Kırmızı tema vurgusu */
+            --accent-color: #dc2626;
             --accent-glow: rgba(220, 38, 38, 0.4);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -29,24 +29,40 @@
 
         header {
             text-align: center;
-            padding: 5rem 1rem 3rem 1rem;
+            padding: 4rem 1rem 3rem 1rem;
             max-width: 900px;
         }
 
-        .logo-area {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+        /* Logo Alanı */
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-container img {
+            max-height: 90px;
+            width: auto;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            background-color: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
             color: var(--accent-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
             color: var(--text-main);
-            text-shadow: 0 0 20px var(--accent-glow);
+            letter-spacing: -1px;
         }
 
         h1 span {
@@ -54,10 +70,13 @@
         }
 
         p.subtitle {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-group {
@@ -75,14 +94,14 @@
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px var(--accent-glow);
+            box-shadow: 0 0 20px var(--accent-glow);
             display: inline-block;
         }
 
         .btn:hover {
             background-color: #b91c1c;
             transform: translateY(-2px);
-            box-shadow: 0 0 25px var(--accent-glow);
+            box-shadow: 0 0 30px var(--accent-glow);
         }
 
         .btn-secondary {
@@ -102,7 +121,7 @@
             width: 90%;
             padding: 2rem 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
@@ -111,21 +130,22 @@
             padding: 2rem;
             border-radius: 10px;
             border: 1px solid var(--border-color);
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
             border-color: var(--accent-color);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .card h3 {
             margin-top: 0;
             color: var(--text-main);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .card h3 span {
@@ -134,8 +154,9 @@
 
         .card p {
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 0;
+            font-size: 0.95rem;
         }
 
         footer {
@@ -152,39 +173,44 @@
 <body>
 
     <header>
-        <div class="logo-area">// Aetherial Guard Core</div>
-        <h1>Metin2 İçin Üstün <span>Otomasyon</span></h1>
-        <p class="subtitle">Oyun deneyiminizi zirveye taşıyan; otomatik giriş, akıllı pelerin, güvenlik doğrulama bypass ve gelişmiş yönetim modülleri.</p>
+        <!-- LOGO EKLEME ALANI: Projeye "logo.png" atarak logonuzu gösterebilirsiniz -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Aetherial Guard Logo" onerror="this.style.display='none'">
+        </div>
+        
+        <div class="version-badge">v2.4 Stable Release</div>
+        <h1>Aetherial <span>Guard</span></h1>
+        <p class="subtitle">En yüksek performans ve kararlılık odaklı geliştirilmiş; akıllı otomasyon ve süreç yönetim platformu.</p>
+        
         <div class="btn-group">
             <a href="#indir" class="btn">Hemen İndir</a>
-            <a href="https://github.com/emirhanyksl" target="_blank" class="btn btn-secondary">GitHub Kaynak Kodları</a>
         </div>
     </header>
 
     <main>
         <div class="card">
             <h3><span>⚡</span> Otomatik Giriş</h3>
-            <p>Sunucu ve kanal seçimlerini otomatik yaparak oyundan düştüğünüzde veya yeniden başlattığınızda kesintisiz olarak karakterinizi oyuna sokar.</p>
+            <p>Sunucu ve kanal akışını optimize ederek, bağlantı kopmalarında veya yeniden başlatmalarda sistemi kesintisiz devreye sokar.</p>
         </div>
         <div class="card">
             <h3><span>🛡️</span> Otomatik Pelerin</h3>
-            <p>Farm alanlarında maksimum verim almanızı sağlayan, optimize edilmiş akıllı pelerin ve slot çekme mekanizması.</p>
-        </div>
-        <div class="card">
-            <h3><span>👁️</span> Güvenlik Doğrulama</h3>
-            <p>Gelişmiş optik tanıma ve görüntü işleme entegrasyonu sayesinde sistem korumalarını ve güvenlik doğrulama adımlarını otomatik olarak aşar.</p>
+            <p>Alan kontrolünü en üst düzeye çıkaran, kesintisiz ve akıllı slot çekme döngüsü yönetimi sağlar.</p>
         </div>
         <div class="card">
             <h3><span>💬</span> Otomatik Mesaj Modu</h3>
-            <p>Belirlediğiniz aralıklarla ve kurallarla otomatik mesaj akışı sağlayarak pazar veya duyuru işlemlerinizi kolaylaştırır.</p>
+            <p>Dinamik zamanlayıcılar ve kurallar çerçevesinde kesintisiz duyuru ve akış yönetimi gerçekleştirir.</p>
         </div>
         <div class="card">
             <h3><span>⚙️</span> Gelişmiş Arayüz</h3>
-            <p>Sistem kaynaklarını yormayan, modern, karanlık ve kırmızı tonların hâkim olduğu şık tasarımıyla tam kontrol sağlar.</p>
+            <p>Sistem kaynaklarını minimum düzeyde kullanan, modern karanlık tema mimarisiyle tam kontrol sunar.</p>
         </div>
         <div class="card">
-            <h3><span>🔒</span> Güvenli Altyapı</h3>
-            <p>Tamamen performans odaklı mimarisiyle arka planda kararlı çalışır, güncel sistemlerle tam uyumluluk sunar.</p>
+            <h3><span>🔒</span> Yüksek Kararlılık</h3>
+            <p>Arka planda hata toleranslı ve güvenli çalışma prensibiyle maksimum uptime performansı verir.</p>
+        </div>
+        <div class="card">
+            <h3><span>🚀</span> Hızlı Entegrasyon</h3>
+            <p>Minimalist yapısı sayesinde ek bir konfigürasyona gerek duymadan doğrudan çalışmaya başlar.</p>
         </div>
     </main>
 
