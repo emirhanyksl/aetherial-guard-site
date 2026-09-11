@@ -234,7 +234,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             z-index: 1;
         }
 
@@ -279,6 +279,49 @@
             color: var(--accent-color);
         }
 
+        /* İletişim / Discord Bölümü */
+        .contact-section {
+            max-width: 700px;
+            width: 90%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 4rem 0;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-section h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--text-main);
+        }
+
+        .contact-section h3 span {
+            color: var(--accent-color);
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .discord-tag {
+            display: inline-block;
+            background-color: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
         footer {
             margin-top: auto;
             padding: 2.5rem;
@@ -309,13 +352,14 @@
         <div class="btn-group">
             <a href="#indir" class="btn">Hemen İndir</a>
             <a href="#fiyatlar" class="btn btn-secondary">Fiyatlar</a>
+            <a href="#iletisim" class="btn btn-secondary">İletişim</a>
         </div>
     </header>
 
     <main>
         <div class="card">
             <h3><span>⚡</span> Otomatik Giriş</h3>
-            <p>Sunucu ve kanal akışını optimize ederek, oyundan düşme veya yeniden başlatma durumlarında karakterinizi saniyeler içinde tekrar oyuna sokar.</p>
+            <p>Sunucu dan kanal akışını optimize ederek, oyundan düşme veya yeniden başlatma durumlarında karakterinizi saniyeler içinde tekrar oyuna sokar.</p>
         </div>
         <div class="card">
             <h3><span>🛡️</span> Otomatik Pelerin</h3>
@@ -362,6 +406,16 @@
             <h4>1 AYLIK KEY</h4>
             <div class="price">1000 <span>TL</span></div>
             <a href="#indir" class="btn" style="width: 80%; padding: 0.6rem; font-size: 0.9rem;">Hemen Al</a>
+        </div>
+    </div>
+
+    <!-- İletişim / Discord Bölümü -->
+    <div class="contact-section" id="iletisim">
+        <h3>İletişim ve <span>Destek</span></h3>
+        <p>Lisans işlemleri, istek ve önerileriniz için doğrudan Discord üzerinden iletişime geçebilirsiniz.</p>
+        <div class="discord-tag">the_walkers</div>
+        <div>
+            <a href="https://discord.com/users/the_walkers" target="_blank" class="btn">Discord'dan Ulaş</a>
         </div>
     </div>
 
