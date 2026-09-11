@@ -6,13 +6,13 @@
     <title>Aetherial Guard | Gelişmiş Metin2 Otomasyon Sistemi</title>
     <style>
         :root {
-            --bg-color: #090a0f;
-            --card-bg: #13151f;
+            --bg-color: #06070b;
+            --card-bg: #11131c;
             --accent-color: #dc2626;
-            --accent-glow: rgba(220, 38, 38, 0.4);
+            --accent-glow: rgba(220, 38, 38, 0.5);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: #27272a;
+            --border-color: #1f2333;
         }
 
         body {
@@ -29,55 +29,48 @@
             overflow-x: hidden;
         }
 
-        /* Hareketli Arka Plan Işık Efektleri */
-        .bg-animation {
-            position: absolute;
+        /* Şatafatlı Hareketli Arka Plan Parçacıkları ve Işık Efekti */
+        .bg-glow {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            z-index: -1;
             pointer-events: none;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(220, 38, 38, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(185, 28, 28, 0.08) 0%, transparent 40%);
         }
 
-        .light-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            animation: floatBlob 15s infinite alternate ease-in-out;
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: 
+                radial-gradient(rgba(220, 38, 38, 0.3) 1px, transparent 1px),
+                radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            animation: moveGrid 20s linear infinite;
         }
 
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background-color: var(--accent-color);
-            top: -100px;
-            left: -100px;
-        }
-
-        .blob-2 {
-            width: 500px;
-            height: 500px;
-            background-color: #ef4444;
-            bottom: -150px;
-            right: -150px;
-            animation-delay: -5s;
-        }
-
-        @keyframes floatBlob {
+        @keyframes moveGrid {
             0% {
-                transform: translate(0, 0) scale(1);
+                background-position: 0 0, 25px 25px;
             }
             100% {
-                transform: translate(50px, 80px) scale(1.15);
+                background-position: 0 1000px, 25px 1025px;
             }
         }
 
         header {
             text-align: center;
-            padding: 4rem 1rem 3rem 1rem;
+            padding: 5rem 1rem 3rem 1rem;
             max-width: 900px;
             z-index: 1;
         }
@@ -87,27 +80,33 @@
         }
 
         .logo-container img {
-            max-height: 100px;
+            max-height: 110px;
             width: auto;
-            filter: drop-shadow(0 0 20px var(--accent-glow));
+            filter: drop-shadow(0 0 25px var(--accent-glow));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
         }
 
         .version-badge {
             display: inline-block;
-            padding: 0.35rem 0.85rem;
-            background-color: rgba(220, 38, 38, 0.1);
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            color: var(--accent-color);
-            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            background-color: rgba(220, 38, 38, 0.15);
+            border: 1px solid rgba(220, 38, 38, 0.4);
+            color: #ef4444;
+            border-radius: 30px;
             font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.2);
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 0.5rem;
             color: var(--text-main);
             letter-spacing: -1px;
@@ -115,6 +114,7 @@
 
         h1 span {
             color: var(--accent-color);
+            text-shadow: 0 0 30px var(--accent-glow);
         }
 
         p.subtitle {
@@ -135,21 +135,22 @@
         }
 
         .btn {
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
             color: #ffffff;
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 0 25px var(--accent-glow);
             display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn:hover {
-            background-color: #b91c1c;
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px var(--accent-glow);
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px var(--accent-glow);
         }
 
         main {
@@ -165,15 +166,33 @@
         .card {
             background-color: var(--card-bg);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(220, 38, 38, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(220, 38, 38, 0.1);
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card h3 {
@@ -205,16 +224,15 @@
             border-top: 1px solid var(--border-color);
             width: 100%;
             z-index: 1;
+            background: rgba(6, 7, 11, 0.8);
         }
     </style>
 </head>
 <body>
 
-    <!-- Arka Planda Yavaşça Süzülen Kırmızı Işık Efektleri -->
-    <div class="bg-animation">
-        <div class="light-blob blob-1"></div>
-        <div class="light-blob blob-2"></div>
-    </div>
+    <!-- Şatafatlı Arka Plan Efektleri -->
+    <div class="bg-glow"></div>
+    <div class="particles"></div>
 
     <header>
         <div class="logo-container">
