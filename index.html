@@ -279,6 +279,92 @@
             color: var(--accent-color);
         }
 
+        /* Çoklu Otomatik AV Bölümü Stili */
+        .multibox-section {
+            max-width: 1100px;
+            width: 90%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            z-index: 1;
+            box-shadow: 0 0 40px rgba(220, 38, 38, 0.15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            .multibox-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .multibox-info h3 {
+            font-size: 2rem;
+            margin-top: 0;
+            color: var(--text-main);
+        }
+
+        .multibox-info h3 span {
+            color: var(--accent-color);
+        }
+
+        .multibox-info p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .multibox-price-box {
+            background: rgba(6, 7, 11, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .multibox-price-box .label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .multibox-price-box .amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .multibox-price-box .amount span {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Oranı */
+            height: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         /* İletişim / Discord Bölümü */
         .contact-section {
             max-width: 700px;
@@ -288,7 +374,7 @@
             border-radius: 12px;
             padding: 2.5rem;
             text-align: center;
-            margin: 3rem 0 4rem 0;
+            margin: 2rem 0 4rem 0;
             z-index: 1;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
@@ -352,6 +438,7 @@
         <div class="btn-group">
             <a href="https://dosya.co/sbf8m8mk0kqj/Aetherial_Guard.exe.html" target="_blank" class="btn">Hemen İndir</a>
             <a href="#fiyatlar" class="btn btn-secondary">Fiyatlar</a>
+            <a href="#coklu-av" class="btn btn-secondary">Çoklu Otomatik AV</a>
             <a href="#iletisim" class="btn btn-secondary">İletişim</a>
         </div>
     </header>
@@ -379,7 +466,7 @@
         </div>
         <div class="card">
             <h3><span>🔒</span> Güvenli Mimari</h3>
-            <p>Modern arayüzü ve kararlı çalışma prensibiyle en zorlu haritalarda bile kesintisiz performans sunar.</p>
+            <p>Modern arayüzü ve kararlı çalışma prensibiyle en zorlu haritalarda bile kesintisiz performans sunır.</p>
         </div>
     </main>
 
@@ -406,6 +493,26 @@
             <h4>1 AYLIK KEY</h4>
             <div class="price">1000 <span>TL</span></div>
             <a href="https://dosya.co/sbf8m8mk0kqj/Aetherial_Guard.exe.html" target="_blank" class="btn" style="width: 80%; padding: 0.6rem; font-size: 0.9rem;">Hemen Al</a>
+        </div>
+    </div>
+
+    <!-- Çoklu Otomatik AV Bölümü -->
+    <div class="multibox-section" id="coklu-av">
+        <div class="multibox-info">
+            <h3>Çoklu Otomatik <span>AV Sistemi</span></h3>
+            <p>Birden fazla karakterinizle aynı anda tam eşgüdümlü avlanma ve operasyon yürütmenizi sağlayan gelişmiş multi-client otomasyon modülü.</p>
+            
+            <div class="multibox-price-box">
+                <span class="label">1 Aylık Özel Lisans</span>
+                <span class="amount">1000 <span>TL</span></span>
+            </div>
+
+            <a href="https://dosya.co/sbf8m8mk0kqj/Aetherial_Guard.exe.html" target="_blank" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">Hemen Satın Al</a>
+        </div>
+        <div class="multibox-video">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/p_QxtSmweV0" title="Aetherial Guard - Çoklu Otomatik AV" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
